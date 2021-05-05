@@ -6,9 +6,19 @@ Tired of having to reconnect to Quantic Telecom all the time ? No worry, qt_auto
 
 ##### selenium
 
+[selenium doc](https://www.selenium.dev/documentation/en/getting_started/)
+
 [How get the text from the &lt;p&gt; tag using XPath Selenium and Python](https://stackoverflow.com/questions/62925043/how-get-the-text-from-the-p-tag-using-xpath-selenium-and-python)
 
 ## Installation & configuration
+
+##### required tools 
+
+To use this project, you need:
+
+* A firefox browser
+
+###### modifying the project to your needs
 
 Make sure to rename the `connection_data_example.json` into `connection_data.json` and to put your credentials inside.
 

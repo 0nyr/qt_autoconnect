@@ -28,9 +28,16 @@ class Authenticator:
     connection_data = None
     browser = None
 
-    def __init__(self, connection_data: dict):
+    def __init__(self, connection_data: dict, is_browser_headless: bool = True):
         self.connection_data: dict = connection_data
-        self.browser = webdriver.Firefox()
+        # by default, use a headless browser
+        if is_browser_headless:
+            fireFoxOptions = webdriver.FirefoxOptions()
+            fireFoxOptions.set_headless()
+            self.browser = webdriver.Firefox(firefox_options = fireFoxOptions)
+        else:
+            self.browser = webdriver.Firefox()
+        
 
     def __get_connection_page_and_enter_credentials(self):
         """

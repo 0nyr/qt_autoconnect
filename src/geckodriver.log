@@ -81,3 +81,32 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 JavaScript error: https://www.quantic-telecom.net/connexion-reseau, line 177: SyntaxError: JSON.parse: expected ',' or '}' after property value in object at line 1 column 38449 of the JSON data
 JavaScript error: https://www.quantic-telecom.net/, line 386: SyntaxError: JSON.parse: expected ',' or '}' after property value in object at line 1 column 38449 of the JSON data
 1620237795950	Marionette	INFO	Stopped listening on port 46299
+1620239093570	geckodriver	INFO	Listening on 127.0.0.1:37187
+1620239093575	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileBKrdCV"
+*** You are running in headless mode.
+1620239094478	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:398126): GLib-GObject-CRITICAL **: 20:24:55.407: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:398146): GLib-GObject-CRITICAL **: 20:24:55.635: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620239097216	Marionette	INFO	Listening on port 46727
+1620239097285	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:398296): GLib-GObject-CRITICAL **: 20:24:57.315: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1620239263275	geckodriver	INFO	Listening on 127.0.0.1:43011
+1620239263282	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTLZazW"
+*** You are running in headless mode.
+1620239264206	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:398703): GLib-GObject-CRITICAL **: 20:27:45.166: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:398725): GLib-GObject-CRITICAL **: 20:27:45.444: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620239267131	Marionette	INFO	Listening on port 33425
+
+(/usr/lib/firefox/firefox:398869): GLib-GObject-CRITICAL **: 20:27:47.229: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1620239267284	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.quantic-telecom.net/connexion-reseau, line 177: SyntaxError: JSON.parse: expected ',' or '}' after property value in object at line 1 column 38449 of the JSON data
+JavaScript error: https://www.quantic-telecom.net/, line 386: SyntaxError: JSON.parse: expected ',' or '}' after property value in object at line 1 column 38449 of the JSON data
+1620239307917	Marionette	INFO	Stopped listening on port 33425
