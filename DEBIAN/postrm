@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /usr/local/bin/
+sudo rm /usr/local/bin/hello_world
+
+exit 0

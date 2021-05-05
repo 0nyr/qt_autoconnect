@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# give rights to run scripts
+chmod +x /opt/first_package/scripts/*.sh
+
+# add command shortcut
+sudo ln -s /opt/first_package/scripts/run.sh /usr/local/bin/hello_world
+
+exit 0

@@ -1,0 +1,10 @@
+Package: qt-autoconnect
+Version: 0.1.0
+Section: development
+Priority: optional
+Architecture: all
+Depends: python3 (>= 3.8)
+Maintainer: Onyr (Florian Rascoussier) <onyr.official@gmail.com>
+Description: A command to reconnect automatically to quantic telecom
+ Tired of having to reconnect to Quantic Telecom all the time ? 
+ No worry, qt_autoconnect has your back !

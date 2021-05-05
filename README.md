@@ -2,17 +2,13 @@
 
 Tired of having to reconnect to Quantic Telecom all the time ? No worry, qt_autoconnect has your back !
 
-### Useful links
-
-##### selenium
-
-[selenium doc](https://www.selenium.dev/documentation/en/getting_started/)
-
-[How get the text from the &lt;p&gt; tag using XPath Selenium and Python](https://stackoverflow.com/questions/62925043/how-get-the-text-from-the-p-tag-using-xpath-selenium-and-python)
+Run the command every 6h periods, hence 4 times a day.
 
 ## Installation & configuration
 
-##### required tools 
+This software is provided as a debian package. Hence, on debian-based distros like Ubuntu, just download the package and install it using `sudo apt install ./package`.
+
+##### required tools
 
 To use this project, you need:
 
@@ -48,6 +44,26 @@ password	"lololhh"
 _token	"gJKPmXZhPBzEEn53Xrr1jlpbVcVWfzZHz4YJwMBG"
 email	"florian.rascoussier@insa-lyon.fr"
 password	"lololhd"
-
-
 ```
+
+### TODOs
+
+* [ ] Modify`preinst` to download and install`geckodriver`.
+* [ ] Complete`preinst`,`postinst`,`prerm`,`postrm`.
+* [ ] Modify`preinst` to get the user credentials and initialise the`res/connection_data.json` or print a message telling the user to edit this file.
+* [ ] Modify`run.sh` to delete the log file if too large.
+* [ ] Adding cron support and init and rm it automatically.
+* [ ] Adding colors to Python scripts outputs.
+
+
+## Notes
+
+### Selenium
+
+#### Useful links
+
+[selenium doc](https://www.selenium.dev/documentation/en/getting_started/)
+
+[setting up headless browser](https://pythonbasics.org/selenium-firefox-headless/)
+
+[How get the text from the &lt;p&gt; tag using XPath Selenium and Python](https://stackoverflow.com/questions/62925043/how-get-the-text-from-the-p-tag-using-xpath-selenium-and-python)

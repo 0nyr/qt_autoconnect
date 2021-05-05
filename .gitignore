@@ -3,6 +3,13 @@ res/connection_data.json
 
 # exclude personal directories
 api_responses
-scripts
 selenium
 web_pages
+python_scripts
+
+# exclude build files
+build
+releases
+
+# log files
+src/geckodriver.log
