@@ -14,22 +14,7 @@ from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
 
 import authenticator as auth
-
-# json manipulations
-def json_file_to_data(json_file_path: str):
-    """
-    Loads a json file and returns its data
-    """
-    with open(json_file_path) as json_file:
-        data = json.load(json_file)
-    return data
-
-def print_pretty_json(json_data: dict):
-    """
-    Print a python json object (dict) prettified
-    """
-    json_formatted_str: str = json.dumps(json_data, indent=4)
-    print(json_formatted_str)
+import utils
 
 # log file manipulations
 def write_in_csv(datalog: dict, csv_file_name: str):
@@ -44,14 +29,14 @@ def write_in_csv(datalog: dict, csv_file_name: str):
 
 
 # important variables
-connection_data: dict = json_file_to_data("../res/connection_data.json")
+connection_data: dict = utils.json_file_to_data("../res/connection_data.json")
 connection_test_url: str = "https://www.google.com/"
 
 datalog: dict = {
     "date": "",
     "status": ""
 }
-datalog_filepath: str = "logs/connection_logs.csv"
+datalog_filepath: str = "../logs/connection_logs.csv"
 
 # functions
 def is_connection_available(url: str) -> bool:
@@ -80,20 +65,20 @@ if is_connection_available(connection_test_url):
 else:
     datalog["status"] = "not_connected"
 
-    # TODO : try reconnect to Quantic Telecom
-    # hard, need to get cookies & _token generated from frontend javascript
-    # this cannot be done by a simple POST request
-    # TODO : plug the test_3_autoconnect.py script here
+    # open browser
     quantic_telecom_authenticator: auth.Authenticator = auth.Authenticator(
         connection_data
     )
+    # try a maximum of 3 times to reconnect
     quantic_telecom_authenticator.reconnect()
+    # close browser
+    quantic_telecom_authenticator.close_browser()
 
     # test connection again
     if is_connection_available(connection_test_url):
         datalog["status"] = "re_connected"
 
 write_in_csv(datalog, datalog_filepath)
-print_pretty_json(datalog)
+utils.print_pretty_json(datalog)
 
 print("*** Quantic Connection test done ***")

@@ -1,0 +1,8 @@
+# exclude credentials 
+res/connection_data.json
+
+# exclude personal directories
+api_responses
+scripts
+selenium
+web_pages

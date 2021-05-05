@@ -1,18 +1,14 @@
 import authenticator as auth
+import utils
 
-# json manipulations
-def json_file_to_data(json_file_path: str):
-    """
-    Loads a json file and returns its data
-    """
-    with open(json_file_path) as json_file:
-        data = json.load(json_file)
-    return data
+connection_data: dict = utils.json_file_to_data("../res/connection_data.json")
 
-connection_data: dict = json_file_to_data("../res/connection_data.json")
-
+# open browser
 quantic_telecom_authenticator: auth.Authenticator = auth.Authenticator(
-        connection_data
-    )
+    connection_data
+)
+# try a maximum of 3 times to reconnect
 quantic_telecom_authenticator.reconnect()
+# close browser
+quantic_telecom_authenticator.close_browser()
 
