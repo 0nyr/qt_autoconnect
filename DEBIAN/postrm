@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /usr/local/bin/
-sudo rm /usr/local/bin/hello_world
+# [1: remove command shortcuts]
+sudo rm /usr/local/bin/qt-autoconnect
 
 exit 0

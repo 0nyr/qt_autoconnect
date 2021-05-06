@@ -1,9 +1,36 @@
 #!/bin/sh
 
+# [1: install qt-autoconnect]
 # give rights to run scripts
-chmod +x /opt/first_package/scripts/*.sh
+chmod +x /opt/qt_autoconnect/scripts/*.sh
 
 # add command shortcut
-sudo ln -s /opt/first_package/scripts/run.sh /usr/local/bin/hello_world
+sudo ln -s /opt/qt_autoconnect/scripts/run.sh /usr/local/bin/qt-autoconnect
+
+
+
+# [2: get user credentials]
+email=test@test
+password=test
+
+# get user credentials
+echo "enter your Quantic Telecom email:"
+read email
+echo "enter your Quantic Telecom password:"
+read password
+
+json="""{
+    \"url\": \"https://www.quantic-telecom.net/connexion-reseau\",
+    \"email\": \"${email}\",
+    \"password\": \"${password}\"
+}
+"""
+
+echo "${json}" > /opt/qt_autoconnect/res/connection_data.json
+
+
+
+# [3: set up cron routine]
+
 
 exit 0

@@ -21,6 +21,7 @@ PGK_BASE_DIR = $(PGK_ROOT_DIR)/opt/qt_autoconnect
 .DEFAULT_GOAL := build
 .PHONY: build clean clean_all clean_last run dirs default compile
 
+# build debian package
 build:
 	@$(ECHO) "$(LIGHT_BLUE_COLOR)*** Copying files for $(PGK_ROOT_DIR)  *** $(NO_COLOR)"
 	mkdir -p build/$(PGK_BASE_DIR)

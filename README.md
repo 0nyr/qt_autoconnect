@@ -46,11 +46,19 @@ email	"florian.rascoussier@insa-lyon.fr"
 password	"lololhd"
 ```
 
+### techs
+
+* geckodriver
+* python3
+* selenium
+
+
 ### TODOs
 
-* [ ] Modify`preinst` to download and install`geckodriver`.
-* [ ] Complete`preinst`,`postinst`,`prerm`,`postrm`.
-* [ ] Modify`preinst` to get the user credentials and initialise the`res/connection_data.json` or print a message telling the user to edit this file.
+* [X] Modify`preinst` to download and install`geckodriver`.
+* [X] Complete`preinst`,`postinst`,`prerm`,`postrm`.
+* [X] Modify`preinst` to get the user credentials and initialise the`res/connection_data.json` or print a message telling the user to edit this file.
+* [ ] Remove`preinst` get user credential and make it a separate command so as not to block graphical package installer !
 * [X] Modify`run.sh` to delete the log file if too large.
 * [ ] Adding cron support and init and rm it automatically.
 * [ ] Adding colors to Python scripts outputs.
