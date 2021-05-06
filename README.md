@@ -51,7 +51,7 @@ password	"lololhd"
 * [ ] Modify`preinst` to download and install`geckodriver`.
 * [ ] Complete`preinst`,`postinst`,`prerm`,`postrm`.
 * [ ] Modify`preinst` to get the user credentials and initialise the`res/connection_data.json` or print a message telling the user to edit this file.
-* [ ] Modify`run.sh` to delete the log file if too large.
+* [X] Modify`run.sh` to delete the log file if too large.
 * [ ] Adding cron support and init and rm it automatically.
 * [ ] Adding colors to Python scripts outputs.
 

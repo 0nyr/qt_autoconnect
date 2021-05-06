@@ -17,6 +17,7 @@ PGK_ROOT_DIR = $(PKG_NAME)-$(PKG_VERSION)
 PGK_BASE_DIR = $(PGK_ROOT_DIR)/opt/qt_autoconnect
 
 # targets
+# set default target : https://stackoverflow.com/questions/2057689/how-does-make-app-know-default-target-to-build-if-no-target-is-specified
 .DEFAULT_GOAL := build
 .PHONY: build clean clean_all clean_last run dirs default compile
 
