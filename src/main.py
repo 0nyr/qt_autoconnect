@@ -8,9 +8,6 @@ import datetime as dt
 import requests
 import ssl
 
-from urllib.parse import urlparse, urljoin
-from bs4 import BeautifulSoup
-
 import authenticator as auth
 import utils
 

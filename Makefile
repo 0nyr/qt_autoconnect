@@ -12,7 +12,7 @@ ECHO = @echo # @echo hides this command in terminal, not its output
 
 # package variables
 PKG_NAME = qt-autoconnect
-PKG_VERSION = 0.1.1
+PKG_VERSION = 0.1.0
 PGK_ROOT_DIR = $(PKG_NAME)-$(PKG_VERSION)
 PGK_BASE_DIR = $(PGK_ROOT_DIR)/opt/qt_autoconnect
 

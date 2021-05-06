@@ -58,9 +58,9 @@ password	"lololhd"
 * [X] Modify`preinst` to download and install`geckodriver`.
 * [X] Complete`preinst`,`postinst`,`prerm`,`postrm`.
 * [X] Modify`preinst` to get the user credentials and initialise the`res/connection_data.json` or print a message telling the user to edit this file.
-* [ ] Remove`preinst` get user credential and make it a separate command so as not to block graphical package installer !
+* [X] Remove`preinst` get user credential and make it a separate command so as not to block graphical package installer !
 * [X] Modify`run.sh` to delete the log file if too large.
-* [ ] Adding cron support and init and rm it automatically.
+* [X] Adding cron support and init and rm it automatically.
 * [ ] Adding colors to Python scripts outputs.
 
 
@@ -75,3 +75,9 @@ password	"lololhd"
 [setting up headless browser](https://pythonbasics.org/selenium-firefox-headless/)
 
 [How get the text from the &lt;p&gt; tag using XPath Selenium and Python](https://stackoverflow.com/questions/62925043/how-get-the-text-from-the-p-tag-using-xpath-selenium-and-python)
+
+### cron
+
+#### Useful links
+
+[cron job beginner&#39;s guide](https://ostechnix.com/a-beginners-guide-to-cron-jobs/)

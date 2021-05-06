@@ -9,24 +9,11 @@ sudo ln -s /opt/qt_autoconnect/scripts/run.sh /usr/local/bin/qt-autoconnect
 
 
 
-# [2: get user credentials]
-email=test@test
-password=test
-
-# get user credentials
-echo "enter your Quantic Telecom email:"
-read email
-echo "enter your Quantic Telecom password:"
-read password
-
-json="""{
-    \"url\": \"https://www.quantic-telecom.net/connexion-reseau\",
-    \"email\": \"${email}\",
-    \"password\": \"${password}\"
-}
-"""
-
-echo "${json}" > /opt/qt_autoconnect/res/connection_data.json
+# [2: tell user to change its credentials]
+echo "You should change your Quantic Telecom credentials
+Use flag '-s' with the command 'qt-autoconnect'.
+Use flag '--help' for more info.
+"
 
 
 
