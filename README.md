@@ -62,7 +62,7 @@ password	"lololhd"
 * [X] Modify`run.sh` to delete the log file if too large.
 * [X] Adding cron support and init and rm it automatically.
 * [X] Correct Makefile to build properly the debian package using`debuild -uc -us`.
-* [ ] Fix cron job installation by debian. Not properly installed.
+* [ ] Fix cron job installation by debian. Cron file in`/etc/cron.d` not properly removed. However it seems it shouldn't be removed by hand/script... ?
 * [ ] Adding colors to Python scripts outputs.
 * [ ] Add a flag -d to display user credentials.
 * [ ] Add a`man` page.
