@@ -11,6 +11,7 @@ import ssl
 
 import authenticator as auth
 import utils
+import console
 
 # log file manipulations
 def write_in_csv(datalog: dict, csv_file_name: str):
@@ -37,7 +38,9 @@ datalog_filepath: str = "../logs/connection_logs.csv"
 
 # package building debug
 if DEBUG:
-    print("Python Current Working directory = ", os.getcwd())
+    console.println_debug(
+        "Python Current Working directory = " + str(os.getcwd())
+    )
 
 # functions
 def is_connection_available(url: str) -> bool:
@@ -58,7 +61,10 @@ def is_connection_available(url: str) -> bool:
 
 
 # script code logic
-print("*** Performing Quantic Connection test ***")
+console.println_fg_color(
+    "*** Performing Quantic Connection test ***", 
+    console.ANSIColorCode.LIGHT_BLUE_C
+)
 datalog["date"] = dt.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
 
 if is_connection_available(connection_test_url):
@@ -83,4 +89,7 @@ else:
 write_in_csv(datalog, datalog_filepath)
 utils.print_pretty_json(datalog)
 
-print("*** Quantic Connection test done ***")
+console.println_fg_color(
+    "*** Quantic Connection test done ***", 
+    console.ANSIColorCode.LIGHT_BLUE_C
+)

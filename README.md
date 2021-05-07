@@ -65,6 +65,7 @@ password	"lololhd"
 * [ ] Fix cron job installation by debian. Cron file in`/etc/cron.d` not properly removed. However it seems it shouldn't be removed by hand/script... ?
 * [ ] Adding colors to Python scripts outputs.
 * [ ] Add a flag -d to display user credentials.
+* [ ] Add a --credits command to display the credits.
 * [ ] Add a`man` page.
 
 

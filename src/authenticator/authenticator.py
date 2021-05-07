@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import time
 
-
+import console
 
 # script code logic
 class Authenticator:
@@ -41,11 +41,11 @@ class Authenticator:
         # write credentials into the fields.
         element = self.browser.find_element(By.ID, "email")
         element.send_keys(self.connection_data['email'])
-        print(element)
+        console.println_fg_color(element, console.ANSIColorCode.GREY1_C)
 
         element = self.browser.find_element(By.ID, "password")
         element.send_keys(self.connection_data['password'])
-        print(element)
+        console.println_fg_color(element, console.ANSIColorCode.GREY1_C)
 
         # validate and go to confirmation page
         element.send_keys(Keys.ENTER)
@@ -66,11 +66,19 @@ class Authenticator:
                 By.XPATH,
                 "//p[@class='border-r mr-3 pr-3 text-justify border-green-light']"
             ))).text
-            print(confirmation_text)
+            console.println_fg_color(
+                confirmation_text, console.ANSIColorCode.TURQUOISE_C
+            )
         except selenium.common.exceptions.TimeoutException:
-            print("timeout error while waiting page loading")
+            console.println_fg_color(
+                "timeout error while waiting page loading", 
+                console.ANSIColorCode.LIGHT_ORANGE_C
+            )
         except:
-            print("unknown error while waiting page loading")
+            console.println_fg_color(
+                "unknown error while waiting page loading", 
+                console.ANSIColorCode.LIGHT_ORANGE_C
+            )
         else:
             # in case of no error
             is_detected = True
@@ -92,12 +100,19 @@ class Authenticator:
                 # check for connection confirmation else retry with longer timeout
                 timeout: int = 45*pow((MAX_NB_ATTEMPTS + 1 - nb_remaining_attempts), 2)
                 is_connected = self.__is_connection_confirmation_message_detected(timeout)
-                print(
+                attemp_info: str = str(
                     "timeout = " + (str)(timeout) + 
-                    ", is_connected = " + (str)(is_connected) 
+                    ", is_connected = " + (str)(is_connected)
+                )
+                console.println_fg_color(
+                    attemp_info, 
+                    console.ANSIColorCode.TURQUOISE_C
                 )
                 nb_remaining_attempts = nb_remaining_attempts - 1
 
                 time.sleep(10)
         except WebDriverException:
-                print("error, can't get page, possibly no internet to quantic telecom")
+                console.println_fg_color(
+                    "error, can't get page, possibly no internet to quantic telecom", 
+                    console.ANSIColorCode.LIGHT_ORANGE_C
+                )
