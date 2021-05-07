@@ -1,0 +1,8 @@
+qt-autoconnect (0.1.0) unstable; urgency=medium
+
+  [ onyr ]
+  * Initial release.
+    This is my first Debian package.
+    Its really annoying to build that.
+
+ -- onyr <onyr.official@gmail.com>  Thu, 6 May 2021 20:37:00 +0200

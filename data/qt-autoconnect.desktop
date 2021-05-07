@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=qt-autoconnect
+Name[fr]=qt-autoconnect
+Comment=A command to reconnect automatically to quantic telecom
+Comment[fr]=Une commande pour se reconnecter à quantic telecom
+Type=Application
+Keywords=qt-autoconnect
+Exec=qt-autoconnect
+Terminal=true
+Icon=qt-autoconnect.png
+Categories=Utility;

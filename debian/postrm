@@ -3,4 +3,7 @@
 # [1: remove command shortcuts]
 sudo rm /usr/local/bin/qt-autoconnect
 
+# [2: remove cron file]
+#sudo rm /etc/cron.d/qt-autoconnect
+
 exit 0

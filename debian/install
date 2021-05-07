@@ -1,0 +1,3 @@
+data/qt-autoconnect.desktop usr/share/applications
+data/qt-autoconnect.png usr/share/pixmaps
+opt/* opt/

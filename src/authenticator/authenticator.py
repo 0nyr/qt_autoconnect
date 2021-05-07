@@ -12,14 +12,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import time
 
-# json manipulations
-def json_file_to_data(json_file_path: str):
-    """
-    Loads a json file and returns its data
-    """
-    with open(json_file_path) as json_file:
-        data = json.load(json_file)
-    return data
 
 
 # script code logic

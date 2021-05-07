@@ -1,0 +1,18 @@
+Source: qt-autoconnect
+Section: development
+Priority: optional
+Maintainer: Onyr (Florian Rascoussier) <onyr.official@gmail.com>
+Build-Depends: debhelper (>=11~),
+ python3 (>= 3.8),
+ python3-requests (>= 2),
+ bash-completion
+Standards-Version: 0.1.0
+Homepage: https://github.com/0nyr/qt_autoconnect
+
+Package: qt-autoconnect
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: A command to reconnect automatically to quantic telecom
+ Tired of having to reconnect to Quantic Telecom all the time ? 
+ No worry, qt_autoconnect has your back !

@@ -61,7 +61,11 @@ password	"lololhd"
 * [X] Remove`preinst` get user credential and make it a separate command so as not to block graphical package installer !
 * [X] Modify`run.sh` to delete the log file if too large.
 * [X] Adding cron support and init and rm it automatically.
+* [X] Correct Makefile to build properly the debian package using`debuild -uc -us`.
+* [ ] Fix cron job installation by debian. Not properly installed.
 * [ ] Adding colors to Python scripts outputs.
+* [ ] Add a flag -d to display user credentials.
+* [ ] Add a`man` page.
 
 
 ## Notes
@@ -81,3 +85,7 @@ password	"lololhd"
 #### Useful links
 
 [cron job beginner&#39;s guide](https://ostechnix.com/a-beginners-guide-to-cron-jobs/)
+
+[create cron jobs via debian config files](https://www.debian.org/doc/manuals/maint-guide/dother.en.html)
+
+Use `package.cron.d` - Installed as `/etc/cron.d/package`: for any other time.

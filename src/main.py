@@ -2,6 +2,7 @@
 # if active -> add a line in log saying its connected
 # else -> reconnect, add a line with date inside logs
 
+import os
 import json
 import csv
 import datetime as dt
@@ -24,6 +25,7 @@ def write_in_csv(datalog: dict, csv_file_name: str):
 
 
 # important variables
+DEBUG: bool = False
 connection_data: dict = utils.json_file_to_data("../res/connection_data.json")
 connection_test_url: str = "https://www.google.com/"
 
@@ -32,6 +34,10 @@ datalog: dict = {
     "status": ""
 }
 datalog_filepath: str = "../logs/connection_logs.csv"
+
+# package building debug
+if DEBUG:
+    print("Python Current Working directory = ", os.getcwd())
 
 # functions
 def is_connection_available(url: str) -> bool:
@@ -73,6 +79,7 @@ else:
     if is_connection_available(connection_test_url):
         datalog["status"] = "re_connected"
 
+# WARN : if PermissionError: Permission denied, check UNIX rights (666)
 write_in_csv(datalog, datalog_filepath)
 utils.print_pretty_json(datalog)
 

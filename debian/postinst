@@ -4,6 +4,9 @@
 # give rights to run scripts
 chmod +x /opt/qt_autoconnect/scripts/*.sh
 
+# give rights to read logs
+chmod 666 /opt/qt_autoconnect/logs/*
+
 # add command shortcut
 sudo ln -s /opt/qt_autoconnect/scripts/run.sh /usr/local/bin/qt-autoconnect
 

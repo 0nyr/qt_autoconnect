@@ -20,7 +20,10 @@ MISSED_COLOR="\e[38;5;208m"
 GREY1="\e[38;5;7m"
 DESCRIPTION_FORMAT="\e[38;5;117m"
 
-
+# [cd to location]
+TEST_SCRIPTS_DIR=.
+SCRIPTS_DIR=/opt/qt_autoconnect/scripts
+cd $SCRIPTS_DIR
 
 # [command params]
 ./command_params.sh "$@"
