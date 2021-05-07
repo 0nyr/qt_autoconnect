@@ -41,11 +41,11 @@ class Authenticator:
         # write credentials into the fields.
         element = self.browser.find_element(By.ID, "email")
         element.send_keys(self.connection_data['email'])
-        console.println_fg_color(element, console.ANSIColorCode.GREY1_C)
+        console.println_fg_color(element, console.ANSIColorCode.GREY3_C)
 
         element = self.browser.find_element(By.ID, "password")
         element.send_keys(self.connection_data['password'])
-        console.println_fg_color(element, console.ANSIColorCode.GREY1_C)
+        console.println_fg_color(element, console.ANSIColorCode.GREY3_C)
 
         # validate and go to confirmation page
         element.send_keys(Keys.ENTER)
@@ -67,7 +67,7 @@ class Authenticator:
                 "//p[@class='border-r mr-3 pr-3 text-justify border-green-light']"
             ))).text
             console.println_fg_color(
-                confirmation_text, console.ANSIColorCode.TURQUOISE_C
+                confirmation_text, console.ANSIColorCode.PASSED_C
             )
         except selenium.common.exceptions.TimeoutException:
             console.println_fg_color(
