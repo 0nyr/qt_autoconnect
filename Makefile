@@ -46,7 +46,8 @@ build:
 	
 	@$(ECHO) "$(LIGHT_BLUE_COLOR)* Copying scripts/*.sh $(NO_COLOR)"
 	mkdir -p build/$(PGK_BASE_DIR)/scripts/
-	cp scripts/*.sh build/$(PGK_BASE_DIR)/scripts/
+	cp scripts/run.sh build/$(PGK_BASE_DIR)/scripts/
+	cp scripts/get_credentials.sh build/$(PGK_BASE_DIR)/scripts/
 
 	@$(ECHO) "$(LIGHT_BLUE_COLOR)*** Building $(PGK_ROOT_DIR)  *** $(NO_COLOR)"
 	(cd build/$(PGK_ROOT_DIR) && debuild -uc -us)

@@ -12,6 +12,8 @@ tmp
 scripts/install_geckodriver.sh
 scripts/bash_scripting.md
 scripts/param_returns.sh
+scripts/text
+scripts/command_params.sh
 
 # exclude build files
 build

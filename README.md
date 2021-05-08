@@ -64,10 +64,13 @@ password	"lololhd"
 * [X] Correct Makefile to build properly the debian package using`debuild -uc -us`.
 * [X] Adding colors to Python scripts outputs.
 * [X] Add a flag -d to display user credentials.
-* [ ] Add alternative -h for --help command
-* [ ] Fix cron job installation by debian. Cron file in`/etc/cron.d` not properly removed. However it seems it shouldn't be removed by hand/script... ?
-* [ ] Add a --credits command to display the credits.
+* [X] Add alternative -h for --help command
+* [X] Add a --credits, -c command to display the credits.
+* [X] Fix flag and command execution pipeline.
+* [ ] Fix cron job desintallation by debian. Cron file in`/etc/cron.d` not properly removed. However it seems it shouldn't be removed by hand/script... ?
 * [ ] Add a`man` page.
+* [ ] Create a PPA.
+* [ ] Release a package in PPA.
 * [ ] Release a package with GitHub.
 
 
