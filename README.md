@@ -63,10 +63,12 @@ password	"lololhd"
 * [X] Adding cron support and init and rm it automatically.
 * [X] Correct Makefile to build properly the debian package using`debuild -uc -us`.
 * [X] Adding colors to Python scripts outputs.
+* [X] Add a flag -d to display user credentials.
+* [ ] Add alternative -h for --help command
 * [ ] Fix cron job installation by debian. Cron file in`/etc/cron.d` not properly removed. However it seems it shouldn't be removed by hand/script... ?
-* [ ] Add a flag -d to display user credentials.
 * [ ] Add a --credits command to display the credits.
 * [ ] Add a`man` page.
+* [ ] Release a package with GitHub.
 
 
 ## Notes

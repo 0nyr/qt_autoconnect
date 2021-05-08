@@ -6,7 +6,7 @@ Build-Depends: debhelper (>=11~),
  python3 (>= 3.8),
  python3-requests (>= 2),
  bash-completion
-Standards-Version: 0.1.1
+Standards-Version: 0.1.2
 Homepage: https://github.com/0nyr/qt_autoconnect
 
 Package: qt-autoconnect

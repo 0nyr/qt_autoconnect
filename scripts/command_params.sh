@@ -20,6 +20,9 @@ MISSED_COLOR="\e[38;5;208m"
 GREY1="\e[38;5;7m"
 DESCRIPTION_FORMAT="\e[38;5;117m"
 
+# directory location
+PGK_BASE_DIR=/opt/qt_autoconnect
+
 
 
 # [command flags]
@@ -32,12 +35,14 @@ print_help() {
         Command to test connection and reconnect 
         to Quantic Telecom if necessary.
 
-        -s          Ask to set user credentials
-        --help      Print help for the command
+        -s              Set user credentials
+        -d              Display currently registered user credentials 
+        --help, -h      Print help for the command
+        --credits, -c   Print developer credits 
         ${RESET}"
 }
 
-s_flah() {
+s_flag() {
     # check that the user wants to change credentials
     echo "${LIGHT_ORANGE_COLOR}*** Change user credentials ? [y/n] ***${RESET}"
     changing_credentials='n'
@@ -48,18 +53,29 @@ s_flah() {
     fi
 }
 
+d_flag() {
+    echo "${TURQUOISE_COLOR}*** Saved user credentials ***${RESET}"
+    echo "${DESCRIPTION_FORMAT}"
+    cat ${PGK_BASE_DIR}/res/connection_data.json
+    echo "${RESET}"
+}
+
 # [option: set user credentials]
 while test $# -gt 0; do
     case "$1" in
         -s) 
-            s_flah
+            s_flag
             if [ $# -gt 0 ]; then shift; fi
             ;;
-        -v) 
-            last_argument=$1
+        -d) 
+            d_flag
             if [ $# -gt 0 ]; then shift; fi
             ;;
         --help) 
+            print_help
+            if [ $# -gt 0 ]; then shift; fi
+            ;;
+        -h) 
             print_help
             if [ $# -gt 0 ]; then shift; fi
             ;;

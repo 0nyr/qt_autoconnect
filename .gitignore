@@ -10,6 +10,8 @@ tmp
 
 # exclude personal test scripts
 scripts/install_geckodriver.sh
+scripts/bash_scripting.md
+scripts/param_returns.sh
 
 # exclude build files
 build
@@ -18,4 +20,3 @@ releases
 # log files
 src/geckodriver.log
 logs/connection_logs_example.csv
-scripts/bash_scripting.md
