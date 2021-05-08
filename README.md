@@ -67,6 +67,7 @@ password	"lololhd"
 * [X] Add alternative -h for --help command
 * [X] Add a --credits, -c command to display the credits.
 * [X] Fix flag and command execution pipeline.
+* [X] Add a license file and copy it inside debian/
 * [ ] Fix cron job desintallation by debian. Cron file in`/etc/cron.d` not properly removed. However it seems it shouldn't be removed by hand/script... ?
 * [ ] Add a`man` page.
 * [ ] Create a PPA.

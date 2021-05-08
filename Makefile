@@ -49,6 +49,9 @@ build:
 	cp scripts/run.sh build/$(PGK_BASE_DIR)/scripts/
 	cp scripts/get_credentials.sh build/$(PGK_BASE_DIR)/scripts/
 
+	@$(ECHO) "$(LIGHT_BLUE_COLOR)* Copying LICENSE $(NO_COLOR)"
+	cp LICENSE build/$(PGK_BASE_DIR)
+
 	@$(ECHO) "$(LIGHT_BLUE_COLOR)*** Building $(PGK_ROOT_DIR)  *** $(NO_COLOR)"
 	(cd build/$(PGK_ROOT_DIR) && debuild -uc -us)
 	mv -f build/*.deb releases/
