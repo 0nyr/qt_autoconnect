@@ -1,0 +1,69 @@
+(base) onyr@aezyr:~$ cd /opt/qt_autoconnect/
+logs/    res/     scripts/ src/     
+(base) onyr@aezyr:~$ cd /opt/qt_autoconnect/logs/
+(base) onyr@aezyr:/opt/qt_autoconnect/logs$ ll
+total 12
+drwxr-xr-x 2 root root 4096 mai    8 19:03 ./
+drwxr-xr-x 6 root root 4096 mai    8 19:03 ../
+-rw-rw-rw- 1 root root  353 mai   13 09:09 connection_logs.csv
+(base) onyr@aezyr:/opt/qt_autoconnect/logs$ cat connection_logs.csv 
+date;status
+2021_05_06_20_21_50;connected
+2021_05_07_00_08_07;connected
+2021_05_07_01_02_24;connected
+2021_05_08_19_04_52;connected
+2021_05_08_19_05_03;connected
+2021_05_08_19_07_28;connected
+2021_05_08_19_07_53;connected
+2021_05_13_09_06_08;connected
+2021_05_13_09_06_20;connected
+2021_05_13_09_07_11;connected
+2021_05_13_09_09_03;connected
+(base) onyr@aezyr:/opt/qt_autoconnect/logs$ qt-autoconnect 
+*** Performing Quantic Connection test ***
+{
+    "date": "2021_05_14_22_25_51",
+    "status": "connected"
+}
+*** Quantic Connection test done ***
+(base) onyr@aezyr:/opt/qt_autoconnect/logs$ cat connection_logs.csv 
+date;status
+2021_05_06_20_21_50;connected
+2021_05_07_00_08_07;connected
+2021_05_07_01_02_24;connected
+2021_05_08_19_04_52;connected
+2021_05_08_19_05_03;connected
+2021_05_08_19_07_28;connected
+2021_05_08_19_07_53;connected
+2021_05_13_09_06_08;connected
+2021_05_13_09_06_20;connected
+2021_05_13_09_07_11;connected
+2021_05_13_09_09_03;connected
+2021_05_14_22_25_51;connected
+(base) onyr@aezyr:/opt/qt_autoconnect/logs$ qt
+qta-browser            qt.conf                qtplugininfo
+qtattributionsscanner  qtdiag                 
+qt-autoconnect         qtpaths                
+(base) onyr@aezyr:/opt/qt_autoconnect/logs$ qt-autoconnect 
+*** Performing Quantic Connection test ***
+Traceback (most recent call last):
+  File "../src/main.py", line 76, in <module>
+    quantic_telecom_authenticator: auth.Authenticator = auth.Authenticator(
+  File "/opt/qt_autoconnect/src/authenticator/authenticator.py", line 29, in __init__
+    self.browser = webdriver.Firefox(firefox_options = fireFoxOptions)
+  File "/home/onyr/anaconda3/lib/python3.8/site-packages/selenium/webdriver/firefox/webdriver.py", line 160, in __init__
+    self.service = Service(
+  File "/home/onyr/anaconda3/lib/python3.8/site-packages/selenium/webdriver/firefox/service.py", line 44, in __init__
+    log_file = open(log_path, "a+") if log_path is not None and log_path != "" else None
+PermissionError: [Errno 13] Permission denied: 'geckodriver.log'
+(base) onyr@aezyr:/opt/qt_autoconnect/logs$ sudo qt-autoconnect 
+[sudo] password for onyr: 
+^[[3~Traceback (most recent call last):
+  File "../src/main.py", line 12, in <module>
+    import authenticator as auth
+  File "/opt/qt_autoconnect/src/authenticator/__init__.py", line 1, in <module>
+    from .authenticator import Authenticator
+  File "/opt/qt_autoconnect/src/authenticator/authenticator.py", line 7, in <module>
+    from selenium.common.exceptions import WebDriverException
+ModuleNotFoundError: No module named 'selenium'
+
