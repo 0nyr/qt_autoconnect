@@ -8,11 +8,11 @@ RED_COLOR=\e[38;5;196m
 NO_COLOR=\e[0m
 
 # variables
-ECHO = @echo # @echo hides this command in terminal, not its output
+ECHO = echo # @echo hides this command in terminal, not its output
 
 # package variables
 PKG_NAME = qt-autoconnect
-PKG_VERSION = 0.1.2
+PKG_VERSION = 0.1.3
 PGK_ROOT_DIR = $(PKG_NAME)-$(PKG_VERSION)
 PGK_BASE_DIR = $(PGK_ROOT_DIR)/opt/qt_autoconnect
 
@@ -70,3 +70,19 @@ THIS_FILE := $(lastword $(MAKEFILE_LIST))
 rebuild:
 	@$(MAKE) -f $(THIS_FILE) clean_last
 	@$(MAKE) -f $(THIS_FILE) build
+
+# run command acception parameters (command flags)
+#   + https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line
+# define macro ARGS
+ARGS = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:${1}}`
+# define variable for default string
+DEFAULT_STR = --t # WARN: add an extra "-" to make it run correctly
+run:
+	@$(ECHO) "$(LIGHT_BLUE_COLOR)*** run program: ./scripts/run.sh $(NO_COLOR)"
+	cd ./scripts/ && \
+	 pwd && \
+	 (./run.sh $(call ARGS,$(DEFAULT_STR)));
+
+# accept extra arguments (by doing nothing when we get a job that doesn't match, rather than throwing an error
+%:
+    @:

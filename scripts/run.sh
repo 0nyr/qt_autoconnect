@@ -27,13 +27,17 @@ DESCRIPTION_FORMAT="\e[38;5;117m"
 # [command flags]
 # variables and parameters
 TEST_SCRIPTS_DIR=.
+TEST_SRC_DIR=../src
 SCRIPTS_DIR=/opt/qt_autoconnect/scripts
+SRC_DIR=/opt/qt_autoconnect/scripts
 execute_location=$SCRIPTS_DIR
 execute="true"
+debug="false"
 
 # flag functions
 t_flag() {
-    execute_location=$TEST_SCRIPTS_DIR
+    execute_location=$TEST_SRC_DIR
+    debug="true"
 }
 
 h_flag() {
@@ -48,7 +52,7 @@ h_flag() {
         --help, -h      Print help for the command
         --credits, -c   Print developer credits
 
-        --test, t       Dev command for testing and debugging
+        --test, -t       Dev command for testing and debugging
         ${RESET}"
 }
 
@@ -76,7 +80,7 @@ c_flag() {
     execute="false"
     echo "${TURQUOISE_COLOR}*** Developer credits  ***${RESET}"
     echo "${DESCRIPTION_FORMAT}"
-    echo "Developped with love by onyr <onyr.official@gmail.com>"
+    echo "Developped with love by Onyr <onyr.official@gmail.com> 2021"
     echo "${RESET}"
 }
 
@@ -133,6 +137,11 @@ done
 # change to directory
 cd $execute_location
 
+# pwd in test mode
+if [ "${debug}" = "true" ]; then
+    pwd
+fi
+
 
 
 # [run the autoconnect command]
@@ -145,7 +154,7 @@ fi
 # [delete and recreate a logs/connection_logs.csv if too large]
 ## variables
 LOG_FILEPATH=../logs/connection_logs.csv
-MAX_LOG_LINES=500
+MAX_LOG_LINES=1000
 nb_lines_log=$(cat $LOG_FILEPATH | wc -l )
 
 if [ $nb_lines_log -gt $MAX_LOG_LINES ]
