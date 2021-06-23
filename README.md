@@ -52,7 +52,6 @@ password	"lololhd"
 * python3
 * selenium
 
-
 ### TODOs
 
 * [X] Modify`preinst` to download and install`geckodriver`.
@@ -68,12 +67,13 @@ password	"lololhd"
 * [X] Add a --credits, -c command to display the credits.
 * [X] Fix flag and command execution pipeline.
 * [X] Add a license file and copy it inside debian/
+* [X] Change`geckodriver.log` location to be inside the`logs/` folder.
+* [X] Create a PPA.
 * [ ] Fix cron job desintallation by debian. Cron file in`/etc/cron.d` not properly removed. However it seems it shouldn't be removed by hand/script... ?
+* [ ]
 * [ ] Add a`man` page.
-* [ ] Create a PPA.
 * [ ] Release a package in PPA.
 * [ ] Release a package with GitHub.
-
 
 ## Notes
 

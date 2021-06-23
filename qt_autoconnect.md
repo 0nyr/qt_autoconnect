@@ -75,8 +75,3 @@ Traceback (most recent call last):
 ```
 
 The problem seems to come from the fact that the current working directory is `/opt/qt_autoconnect/scripts/` and not `/opt/qt_autoconnect/src/` where the `geckodriver.log` is.
-
-### TODOs
-
-* [ ] Understand how to specify a path for`geckodriver.log`.
-* [ ] Change`geckodriver.log` location to be inside the`logs/` folder.

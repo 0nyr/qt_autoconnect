@@ -5,4 +5,4 @@ qt-autoconnect (0.1.3) unstable; urgency=medium
     This is my first Debian package.
     Its really annoying to build that.
 
- -- onyr <onyr.official@gmail.com>  Thu, 6 May 2021 20:37:00 +0200
+ -- onyr <florian.rascoussier@insa-lyon.fr>  Thu, 6 May 2021 20:37:00 +0200
