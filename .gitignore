@@ -8,6 +8,12 @@ web_pages
 python_scripts
 tmp
 
+# python cache
+__pycache__
+*.pyc
+*geckodriver.log
+/**/geckodriver.log
+
 # exclude personal test scripts
 scripts/install_geckodriver.sh
 scripts/bash_scripting.md

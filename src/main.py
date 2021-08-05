@@ -8,6 +8,8 @@ import csv
 import datetime as dt
 import requests
 import ssl
+import schedule
+import time
 
 # personal imports
 import authenticator as auth
@@ -27,7 +29,7 @@ def write_in_csv(datalog: dict, csv_file_name: str):
 
 
 # important variables
-DEBUG: bool = False
+DEBUG: bool = True
 connection_data: dict = utils.json_file_to_data("../res/connection_data.json")
 connection_test_url: str = "https://www.google.com/"
 
@@ -62,35 +64,55 @@ def is_connection_available(url: str) -> bool:
 
 
 # script code logic
-console.println_fg_color(
-    "*** Performing Quantic Connection test ***", 
-    console.ANSIColorCode.LIGHT_BLUE_C
-)
-datalog["date"] = dt.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-
-if is_connection_available(connection_test_url):
-    datalog["status"] = "connected"
-else:
-    datalog["status"] = "not_connected"
-
-    # open browser
-    quantic_telecom_authenticator: auth.Authenticator = auth.Authenticator(
-        connection_data
+def job(interval: int):
+    console.println_fg_color(
+        "*** Performing Quantic Connection test ***", 
+        console.ANSIColorCode.LIGHT_BLUE_C
     )
-    # try a maximum of 3 times to reconnect
-    quantic_telecom_authenticator.reconnect()
-    # close browser
-    quantic_telecom_authenticator.close_browser()
+    datalog["date"] = dt.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
 
-    # test connection again
     if is_connection_available(connection_test_url):
-        datalog["status"] = "re_connected"
+        datalog["status"] = "connected"
+    else:
+        datalog["status"] = "not_connected"
 
-# WARN : if PermissionError: Permission denied, check UNIX rights (666)
-write_in_csv(datalog, datalog_filepath)
-utils.print_pretty_json(datalog)
+        # open browser
+        quantic_telecom_authenticator: auth.Authenticator = auth.Authenticator(
+            connection_data
+        )
+        # try a maximum of 3 times to reconnect
+        quantic_telecom_authenticator.reconnect()
+        # close browser
+        quantic_telecom_authenticator.close_browser()
 
-console.println_fg_color(
-    "*** Quantic Connection test done ***", 
-    console.ANSIColorCode.LIGHT_BLUE_C
-)
+        # test connection again
+        if is_connection_available(connection_test_url):
+            datalog["status"] = "re_connected"
+
+    # WARN : if PermissionError: Permission denied, check UNIX rights (666)
+    write_in_csv(datalog, datalog_filepath)
+    utils.print_pretty_json(datalog)
+
+    console.println_fg_color(
+        "*** Quantic Connection test done ***", 
+        console.ANSIColorCode.LIGHT_BLUE_C
+    )
+    console.println_fg_color(
+        "Waiting " + str(interval) + " min...", 
+        console.ANSIColorCode.LIGHT_ORANGE_C
+    )
+
+
+# [ scheduling ]
+interval_in_minutes: int = 1
+
+# run first time
+job(interval=interval_in_minutes)
+
+# run on schedule
+schedule.every(
+    interval_in_minutes
+).minutes.do(job, interval=interval_in_minutes)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
