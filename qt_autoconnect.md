@@ -20,6 +20,14 @@
 
 `sudo service cron restart`: restart `cron`.
 
+### qt-autoconnect 0.1.3+
+
+Simple launch from command line:
+
+1. Go in the`src/` folder.
+2. Use`conda`:`conda activate py39`
+3. Run the program:`python main.py`
+
 # troubleshooting
 
 ##### program terminating with error

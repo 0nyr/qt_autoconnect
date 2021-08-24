@@ -104,7 +104,7 @@ def job(interval: int):
 
 
 # [ scheduling ]
-interval_in_minutes: int = 1
+interval_in_minutes: int = 30
 
 # run first time
 job(interval=interval_in_minutes)
